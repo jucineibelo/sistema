@@ -24,8 +24,6 @@ object frmPesquisa: TfrmPesquisa
     Color = clGradientInactiveCaption
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = -8
-    ExplicitTop = -6
     object Label1: TLabel
       Left = 184
       Top = 8
@@ -79,8 +77,6 @@ object frmPesquisa: TfrmPesquisa
     Color = clGradientInactiveCaption
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 216
-    ExplicitWidth = 711
     object DBNavigator1: TDBNavigator
       Left = 272
       Top = 6

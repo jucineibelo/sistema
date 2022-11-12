@@ -25,7 +25,7 @@ type
     qryCadastroCELULAR: TStringField;
     qryCadastroEMAIL: TStringField;
     Label1: TLabel;
-    dbId: TDBEdit;
+    idContato: TDBEdit;
     Label2: TLabel;
     dbNome: TDBEdit;
     Label3: TLabel;

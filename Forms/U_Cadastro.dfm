@@ -1,6 +1,7 @@
 object frmCadastro: TfrmCadastro
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'CADASTRO DE CONTATOS'
   ClientHeight = 357
   ClientWidth = 797
@@ -20,7 +21,7 @@ object frmCadastro: TfrmCadastro
     Width = 80
     Height = 16
     Caption = 'ID_CONTATO'
-    FocusControl = dbId
+    FocusControl = idContato
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -84,7 +85,7 @@ object frmCadastro: TfrmCadastro
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object dbId: TDBEdit
+  object idContato: TDBEdit
     Left = 198
     Top = 96
     Width = 134
@@ -126,7 +127,6 @@ object frmCadastro: TfrmCadastro
     Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = []
-    MaxLength = 13
     ParentFont = False
     TabOrder = 2
   end
@@ -142,7 +142,6 @@ object frmCadastro: TfrmCadastro
     Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = []
-    MaxLength = 14
     ParentFont = False
     TabOrder = 3
   end
@@ -176,8 +175,6 @@ object frmCadastro: TfrmCadastro
     ParentBackground = False
     ParentFont = False
     TabOrder = 5
-    ExplicitLeft = -160
-    ExplicitTop = 25
     object btNovo: TBitBtn
       Left = 14
       Top = 5
@@ -314,23 +311,21 @@ object frmCadastro: TfrmCadastro
   end
   object Conexao: TFDConnection
     Params.Strings = (
-      'Database=C:\Sistema\exe\Banco\DADOS.FDB'
+      'Database=C:\Contatos\DADOS.FDB'
       'User_Name=sysdba'
       'Password=masterkey'
       'CharacterSet=WIN1252'
       'DriverID=FB')
-    Connected = True
     LoginPrompt = False
     Left = 744
     Top = 72
   end
   object qryCadastro: TFDQuery
-    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from contato')
     Left = 744
-    Top = 112
+    Top = 120
     object qryCadastroID_CONTATO: TIntegerField
       FieldName = 'ID_CONTATO'
       Origin = 'ID_CONTATO'
@@ -367,7 +362,7 @@ object frmCadastro: TfrmCadastro
   object dsCadastro: TDataSource
     DataSet = qryCadastro
     Left = 744
-    Top = 160
+    Top = 168
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Forms'

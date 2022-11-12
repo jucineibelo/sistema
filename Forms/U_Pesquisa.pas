@@ -47,18 +47,21 @@ begin
   case cbOpcao.ItemIndex of
     0:
       begin
-        frmCadastro.qryCadastro.SQL.Add('where ID_CONTATO =: edPesquisa');
-        frmCadastro.qryCadastro.ParamByName('edPesquisa').AsInteger :=
+        frmCadastro.qryCadastro.SQL.Add('where ID_CONTATO =:pcodigo');
+        frmCadastro.qryCadastro.ParamByName('pcodigo').AsInteger :=
           strtoint(edPesquisa.Text);
       end;
+
     1:
       begin
-        frmCadastro.qryCadastro.SQL.Add('where nome =: dbNome');
-        frmCadastro.qryCadastro.ParamByName('dbNome').AsString :=
+        frmCadastro.qryCadastro.SQL.Add('where NOME =:pnome');
+        frmCadastro.qryCadastro.ParamByName('pnome').AsString :=
           (edPesquisa.Text);
       end;
   end;
+
   frmCadastro.qryCadastro.Open;
+
   if frmCadastro.qryCadastro.IsEmpty then
   begin
     MessageDlg('Nenhum registro encontrado!', mtInformation, [mbOk], 0); end;
